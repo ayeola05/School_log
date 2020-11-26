@@ -1,0 +1,39 @@
+{% extends 'basic_app/base.html' %}
+
+{% block content %}
+
+<h1>{{profile.last_name}}'s Profile</h1>
+
+<div class="jumbotron">
+
+		<p><h1>Passport: <img src="{{profile.passport.url}}"></h1></p>
+		<p><h1>First Name: {{profile.first_name}}</h1></p>
+		<p><h1>Last Name: {{profile.last_name}}</h1></p>
+		<p><h1>Email: {{profile.email}}</h1></p>
+		<p><h1>Phone Number: {{profile.phone_number}}</h1></p>
+		<p><h1>Country: {{profile.country}}</h1></p>
+		<p><h1>Address: {{profile.address}}</h1></p>
+		<p><h1>Next of Kin's Name: {{profile.next_of_kin_name}}</h1></p>
+		<p><h1>Next of Kin's Email: {{profile.next_of_kin_email}}</h1></p>
+		
+		
+	
+	
+
+
+		
+
+</div>
+<p>
+<a class="btn btn-warning btn-lg" href="{% url 'basic_app:update' profile.id %}">Update {{profile.last_name}}'s profile</a>
+</p>
+
+
+<p>
+<a class="btn btn-danger btn=lg" href="{% url 'basic_app:delete' profile.id %}">Delete {{profile.last_name}}'s profile</a>
+</p>
+
+<p>
+	<a class="btn btn-primary btn-lg" href="{% url 'basic_app:list' %}">Back</a>
+</p>
+{% endblock content %}
